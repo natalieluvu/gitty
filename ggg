@@ -1,0 +1,4 @@
+game:GetService("RunService").RenderStepped:Connect(function())
+for _, plrs in pairs(game:GetService("Players"):GetPlayers()) do 
+if plrs ~= game.Players.LocalPlayer and plrs:FindFirstChild("Role") and plrs.Character.Head:FindFirstChild("Esp By J") == nil then
+espgui:Clone().Parent = plrs.Character.Head
