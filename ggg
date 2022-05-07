@@ -18,7 +18,7 @@ esptext.TextStrokeTransparency = 0.3
 
 
 
-while wait(.5) do 
+while wait(1) do 
 for _, plrs in pairs(game:GetService("Players"):GetPlayers()) do 
 if plrs ~= game.Players.LocalPlayer and plrs.Character.Head:FindFirstChild("Esp By J") == nil and plrs.Character:FindFirstChild("Head") then
 esptext.Text = "("..plrs.Name..")"
