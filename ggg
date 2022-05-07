@@ -1,4 +1,28 @@
-game:GetService("RunService").RenderStepped:Connect(function())
+local espgui = Instance.new("BillboardGui")
+local esptext = Instance.new("TextLabel", espgui)
+
+espgui.Name = "Esp By J";
+espgui.AlwaysOnTop = true;
+espgui.ResetOnSpawn = false;
+espgui.LightInfluence = 0;
+espgui.Size = UDim2.new(1.75,0,1.75,0);
+esptext.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+esptext.Text = ""
+esptext.Size = UDim2.new(0.0001, 0.00001, 0.0001, 0.00001);
+esptext.TextSize = 15
+esptext.Font = "DenkOne"
+esptext.TextColor3 = Color3.fromRGB(255,0,0)
+esptext.TextStrokeColor3 = Color3.fromRGB(255,255,255)
+esptext.TextStrokeTransparency = 0.3
+
+
+
+
+game:GetService("RunService").RenderStepped:Connect(function()
 for _, plrs in pairs(game:GetService("Players"):GetPlayers()) do 
-if plrs ~= game.Players.LocalPlayer and plrs:FindFirstChild("Role") and plrs.Character.Head:FindFirstChild("Esp By J") == nil then
+if plrs ~= game.Players.LocalPlayer and plrs.Character.Head:FindFirstChild("Esp By J") == nil and plrs.Character:FindFirstChild("Head") then
+esptext.Text = "("..plrs.Name..")"
 espgui:Clone().Parent = plrs.Character.Head
+end
+end
+end)
