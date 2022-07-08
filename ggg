@@ -19,7 +19,7 @@ esptext.TextStrokeTransparency = 0.3
 
 game:GetService("RunService").RenderStepped:Connect(function()
 for _, plrs in pairs(game:GetService("Players"):GetPlayers()) do 
-if plrs ~= game.Players.LocalPlayer and plrs.Character.Head:FindFirstChild("Esp By J") == nil and plrs.Character:FindFirstChild("Head") then
+if plrs ~= game.Players.LocalPlayer and plrs.Character and plrs.Character:FindFirstChild("Head") and plrs.Character.Head:FindFirstChild("Esp By J") == nil then
 esptext.Text = "("..plrs.Name..")"
 espgui:Clone().Parent = plrs.Character.Head
 end
